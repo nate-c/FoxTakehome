@@ -7,7 +7,7 @@ import './App.css'
 function App() {
   const [contacts, setContacts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   useEffect(() =>{
     setIsLoading(true);
     fetch('https://randomuser.me/api/?results=20').then((response) =>{
@@ -38,10 +38,15 @@ function App() {
       </div>
       <h1>Vite + React</h1> */}
       <div className="card">
-      {isLoading && 
+      {isLoading ? 
         <div>
           Loading.....
-        </div>
+        </div> : null
+      }
+      {error ? 
+        <div className='error'>
+          {error}
+        </div> : null
       }
       {
         !isLoading && <ContactList contacts={contacts} />
