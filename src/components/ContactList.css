@@ -1,0 +1,12 @@
+.contact-list{
+
+}
+
+.contact-list .contact{
+    background-color: grey;
+    padding: 5px;
+}
+.contact-list .contact:hover{
+    background-color: beige;
+    color: black;
+}
