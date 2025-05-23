@@ -6,10 +6,11 @@ const ContactList = ({contacts}) => {
 
   return (
     <div className='contact-list'>
+      <div>Contacts</div>
         {
             contacts.length > 0 && 
-            contacts.map((contact) =>
-            <div className='contact'>
+            contacts.map((contact, index) =>
+            <div className={`contact ${index % 2 ? 'striped' : ''}`}>
                 {contact.name.first } {contact.name.last}
             </div>)
         }
